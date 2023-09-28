@@ -17,4 +17,10 @@ esto es una nueva modificaion  2-0
 
 miguel esta trabajando 
 
+
 masmela esta trabajadno
+
+commit 1
+
+commit 2
+
