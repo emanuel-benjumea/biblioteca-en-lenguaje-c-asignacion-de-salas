@@ -16,9 +16,9 @@ esto es una nueva modificaion
 esto es una nueva modificaion  2-0
 
 miguel esta trabajando 
+el grupo esta trabajando 
 
-
-masmela esta trabajadno
+masmela esta trabajando
 
 commit 1
 
