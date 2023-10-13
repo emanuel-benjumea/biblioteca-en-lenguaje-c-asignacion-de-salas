@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1552c5fd-357c-46af-820c-75e1cb388a9d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uceva/microservicioreservas/model/dao/ReservaRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uceva/microservicioreservas/ReservaRestController/ReservaRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uceva/microservicioreservas/Controller/ReservaRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uceva/microservicioreservas/model/entities/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uceva/microservicioreservas/model/entities/Reserva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uceva/microservicioreservas/model/service/IReservaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uceva/microservicioreservas/model/service/IReservaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uceva/microservicioreservas/Controller/ReservaRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uceva/microservicioreservas/Controller/ReservaRestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +29,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "git-widget-placeholder": "TU3-26-Modificar-Reservas",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)"
