@@ -1,16 +1,17 @@
 package com.uceva.microservicioreservas.model.service;
 
+import com.uceva.microservicioreservas.model.dao.ReservaRepository;
 import com.uceva.microservicioreservas.model.entities.Reserva;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public class ReservaServiceImpl {
-    private final IReservaDao reservaDao;
+public class ReservaServiceImpl implements IReservaService{
+    private ReservaRepository reservaDao;
 
-    @Autowired
-    public ReservaServiceImpl(IReservaDao reservaDao) {
+
+    public ReservaServiceImpl(ReservaRepository reservaDao) {
         this.reservaDao = reservaDao;
     }
 
