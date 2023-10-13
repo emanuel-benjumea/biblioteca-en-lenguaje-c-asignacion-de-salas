@@ -1,7 +1,6 @@
 package com.uceva.microservicioreservas.model.entities;
 
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +21,6 @@ public class Reserva {
     private String fecha;
     private String sala;
     private String hora;
-
-
+    private String estado;
 
 }
