@@ -18,10 +18,22 @@ public class ReservaRestController {
     }
 
     @PostMapping
-    public Reserva crearReserva(@RequestBody Reserva reserva){
+    public Reserva crearReserva(@RequestBody Reserva reserva) {
         return reservaRepository.save(reserva);
     }
 
+    @DeleteMapping("/{id}")
+    public String eliminarReserva(@PathVariable Long id) {
+        Optional<Reserva> reservaExistente = reservaRepository.findById(id);
+
+        if (reservaExistente.isPresent()) {
+            reservaRepository.deleteById(id);
+            return "Reserva eliminada exitosamente.";
+        } else {
+            return "Reserva no encontrada.";
+        }
+    }
+    
     @PutMapping("/{id}")
     public Reserva modificarReserva(@PathVariable Long id, @RequestBody Reserva nuevaReserva) {
         Optional<Reserva> reservaExistente = reservaRepository.findById(id);
@@ -39,10 +51,12 @@ public class ReservaRestController {
             return null;
         }
     }
+
     @GetMapping
     public List<Reserva> listarReservas() {
         return (List<Reserva>) reservaRepository.findAll();
     }
+
 
 }
 
