@@ -7,3 +7,6 @@ public interface ReservaRepository extends CrudRepository<Reserva, Long> {
 
     // Puedes añadir consultas personalizadas si es necesario
 }
+
+
+

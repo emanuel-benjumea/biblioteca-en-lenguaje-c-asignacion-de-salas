@@ -2,9 +2,7 @@ package com.uceva.microservicioreservas.model.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,10 +16,13 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Reserva {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombreSolicitante;
     private String fecha;
-
+    private String sala;
     private String hora;
+
+
 
 }
