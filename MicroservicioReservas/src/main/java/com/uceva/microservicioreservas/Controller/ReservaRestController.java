@@ -2,8 +2,11 @@ package com.uceva.microservicioreservas.Controller;
 
 import com.uceva.microservicioreservas.model.dao.ReservaRepository;
 import com.uceva.microservicioreservas.model.entities.Reserva;
+import com.uceva.microservicioreservas.model.service.IReservaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
@@ -86,5 +89,36 @@ public class ReservaRestController {
         }
     }
 
+
+
+    /* Aceptar o Denegar Reservas */
+    @PostMapping("/aceptar/{reservaId}")
+    public ResponseEntity<String> aceptarReserva(@PathVariable Long reservaId) {
+        Reserva reserva = IReservaService.findById(reservaId);
+
+        if (reserva != null) {
+            // Realiza acciones necesarias para aceptar la reserva (por ejemplo, cambiar el estado)
+            reserva.setEstado("Aceptada");
+            IReservaService.save(reserva);  // Guarda la reserva actualizada en la base de datos
+            return ResponseEntity.ok("Reserva aceptada correctamente.");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Reserva no encontrada.");
+        }
+    }
+
+    // Endpoint para denegar una reserva por su ID
+    @PostMapping("/denegar/{reservaId}")
+    public ResponseEntity<String> denegarReserva(@PathVariable Long reservaId) {
+        Reserva reserva = IReservaService.findById(reservaId);
+
+        if (reserva != null) {
+            // Realiza acciones necesarias para denegar la reserva (por ejemplo, cambiar el estado)
+            reserva.setEstado("Denegada");
+            IReservaService.save(reserva);  // Guarda la reserva actualizada en la base de datos
+            return ResponseEntity.ok("Reserva denegada correctamente.");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Reserva no encontrada.");
+        }
+    }
 }
 
