@@ -38,4 +38,11 @@ public class ReservaRestController {
 
             return null;
         }
-    }}
+    }
+    @GetMapping
+    public List<Reserva> listarReservas() {
+        return (List<Reserva>) reservaRepository.findAll();
+    }
+
+}
+

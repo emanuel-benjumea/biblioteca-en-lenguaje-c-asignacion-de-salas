@@ -20,7 +20,7 @@ public class Reserva {
     private Long id;
     private String nombreSolicitante;
     private String fecha;
-
+    private String sala;
     private String hora;
 
 
