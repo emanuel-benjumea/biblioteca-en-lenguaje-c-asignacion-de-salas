@@ -8,6 +8,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ReservaRepository extends CrudRepository<Reserva, Long> {
+
+    List<Reserva>findByUserId(long userId);
     List<Reserva> findByFechaBetweenAndEstado(String fechaInicio, String fechaFin, String estado);
     List<Reserva> findByFechaBetween(String fechaInicio, String fechaFin);
     List<Reserva> findByEstado(String estado);

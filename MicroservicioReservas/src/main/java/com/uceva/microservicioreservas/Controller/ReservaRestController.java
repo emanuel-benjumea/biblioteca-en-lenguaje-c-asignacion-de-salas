@@ -55,6 +55,14 @@ public class ReservaRestController {
         }
     }
 
+
+    @GetMapping("/historial/{userId}")
+    public List<Reserva> obtenerHistorialDeReservas(@PathVariable Long userId) {
+        return reservaRepository.findByUserId(userId);
+    }
+
+
+
     @GetMapping
     public List<Reserva> listarReservas() {
         return (List<Reserva>) reservaRepository.findAll();
