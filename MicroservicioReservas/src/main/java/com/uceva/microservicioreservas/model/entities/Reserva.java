@@ -13,11 +13,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name="reserva")
 public class Reserva {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombreSolicitante;
+    private String nombresolicitante;
     private String fecha;
     private String sala;
     private String hora;

@@ -3,6 +3,8 @@ package com.uceva.microservicioreservas.Controller;
 import com.uceva.microservicioreservas.model.dao.ReservaRepository;
 import com.uceva.microservicioreservas.model.entities.Reserva;
 import com.uceva.microservicioreservas.model.service.IReservaService;
+import com.uceva.microservicioreservas.model.service.ReservaServiceImpl;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -16,14 +18,14 @@ import java.util.Optional;
 @RequestMapping("/reservas")
 public class ReservaRestController {
     private final ReservaRepository reservaRepository;
-    private final IReservaService reservaService;
+    private ReservaServiceImpl reservaService;
 
     @Autowired  //--error solucionado
     public ReservaRestController(ReservaRepository reservaRepository) {
         this.reservaRepository = reservaRepository;
     }
 
-    @PostMapping
+    @PostMapping("/")
     public Reserva crearReserva(@RequestBody Reserva reserva) {
         
         return reservaRepository.save(reserva);
@@ -47,7 +49,7 @@ public class ReservaRestController {
 
         if (reservaExistente.isPresent()) {
             Reserva reservaActual = reservaExistente.get();
-            reservaActual.setNombreSolicitante(nuevaReserva.getNombreSolicitante());
+            reservaActual.setNombresolicitante(nuevaReserva.getNombresolicitante());
             reservaActual.setFecha(nuevaReserva.getFecha());
             reservaActual.setHora(nuevaReserva.getHora());
 
@@ -60,11 +62,10 @@ public class ReservaRestController {
     }
 
 
-    @GetMapping("/historial/{userId}")//se agregan historial de reservas
-    public List<Reserva> obtenerHistorialDeReservas(@PathVariable Long userId) {
-        return reservaRepository.findByUserId(userId);
+    @GetMapping("/historial/{id}")//se agregan historial de reservas
+    public List<Reserva> obtenerHistorialDeReservas(@PathVariable Long id) {
+        return reservaRepository.findAllById(id);
     }
-
 
 
     @GetMapping
